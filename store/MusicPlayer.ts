@@ -1,4 +1,5 @@
 import { Beat } from '@/utils/types/Beats'
+import ApiData from '@/utils/types/ApiData'
 
 export const useMusicPlayer = defineStore("music-player", () => {
     //state
@@ -44,6 +45,16 @@ export const useMusicPlayer = defineStore("music-player", () => {
     })
 
     //actions
+    const trackBeat = (beatData: Beat): void => {
+        const config = useRuntimeConfig()
+        let data: ApiData = {
+            data: { beat: beatData.pk },
+            method: 'POST',
+            path: `${config.public.API_BEAT_PLAYS}`
+        }
+        useApiPlus(data)
+    }
+
     const audioEndedEvents = (): void => {
         audio.value.addEventListener('ended', () => {
             if(audio.value.ended){ 
@@ -77,6 +88,7 @@ export const useMusicPlayer = defineStore("music-player", () => {
             beat.value = queueBeat
             setAudio(`/media/${queueBeat.beat_file}`)
             play_pause()
+            trackBeat(queueBeat)
         } 
     }
 
@@ -104,6 +116,7 @@ export const useMusicPlayer = defineStore("music-player", () => {
         clearInterval(timeInterval.value)
         if(currentTime.value > 3){
             audio.value.currentTime = 0
+            trackBeat(beat.value)
             return
         }
         if(queueIndex.value > 0){
@@ -111,6 +124,7 @@ export const useMusicPlayer = defineStore("music-player", () => {
             let queueBeat: Beat = queue.value[queueIndex.value];
             beat.value = queueBeat
             setAudio(`/media/${queueBeat.beat_file}`)
+            trackBeat(queueBeat)
         } 
         play_pause()
     }
@@ -150,6 +164,7 @@ export const useMusicPlayer = defineStore("music-player", () => {
         queue.value = queueData
         queueIndex.value = index
         if(!isPlayingPage.value){ isShuffled.value ? shuffle() : ''; }
+        trackBeat(beatData)
     }
 
     const setMediaSessionData = (): void => {   

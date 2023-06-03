@@ -1,9 +1,9 @@
 {
-  "name": "easybeatz-easymoney",
+  "name": "easybeatz",
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --https --ssl-cert ./ssl/easybeatz.local+3.pem --ssl-key ./ssl/easybeatz.local+3-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

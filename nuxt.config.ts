@@ -11,6 +11,7 @@ export default defineNuxtConfig({
             API_DOWNLOAD_BEAT: process.env.API_DOWNLOAD_BEAT,
             API_DOWNLOAD_STEMS: process.env.API_DOWNLOAD_STEMS,
             API_EXPLORE_BEATS: process.env.API_EXPLORE_BEATS,
+            API_BEAT_PLAYS: process.env.API_BEAT_PLAYS,
             API_FAQS: process.env.API_FAQS,
             API_FAVORITE_BEATS: process.env.API_FAVORITE_BEATS,
             API_GENRES: process.env.API_GENRES,

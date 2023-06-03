@@ -173,13 +173,16 @@ export const useBeatMethods = () => {
         if(userStore.is_authenticated){
             let found_beat = beatsStore.explore_beats.find(x => x.pk == pk)
             if(found_beat){ 
+                
                 found_beat.is_favorite = !found_beat.is_favorite
                 found_beat.is_favorite ? userStore.user.favorite_beats.push(pk) : userStore.user.favorite_beats.pop()
+                
                 let data: ApiData = {
                     data: { beat: found_beat.pk, user: userStore.user.pk },
                     method: 'POST',
                     path: `${config.public.API_FAVORITE_BEATS}`
                 }
+
                 if (found_beat.is_favorite){
                     useApiPlus(data)
                     snackbarStore.setSnackbar('Beat added to wishlist', true)
@@ -188,7 +191,8 @@ export const useBeatMethods = () => {
                     data.method = 'DELETE'
                     useApiPlus(data) 
                     snackbarStore.setSnackbar('Beat removed from wishlist', true)
-                }       
+                }  
+                     
             }
             return 
         }
