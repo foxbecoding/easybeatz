@@ -51,8 +51,6 @@
 import { useUser } from '@/store/User'
 
 const alert = ref<boolean>(true)
-const config = useRuntimeConfig()
-const router = useRouter()
 const userStore = useUser()
 onMounted(() => {
     if(userStore.is_authenticated && ('billing_info' in userStore.user)){
