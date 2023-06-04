@@ -1,11 +1,11 @@
 <template>
     <div>
         <v-container
-            class="pb-12" 
+            style="position: relative; height: calc(100vh - 64px)"
             :class="$vuetify.display.mdAndUp ? 'ma-4' : ''" 
             fluid
         >
-            <HomeCaption />
+            <HomeCaption style="width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)" />
         </v-container>
         <v-container fluid>
             <AboutContent />
