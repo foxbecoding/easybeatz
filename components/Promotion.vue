@@ -6,7 +6,7 @@
             border="start"
             border-color="primary"
             color="surface"
-            elevation="2"
+            elevation="0"
             rounded="lg"
             class="text-center"
         >
@@ -20,7 +20,7 @@
             border="start"
             border-color="primary"
             color="surface"
-            elevation="2"
+            elevation="0"
             rounded="lg"
             class="d-block"
             title="Limited time only! "
