@@ -1,7 +1,6 @@
 <template>
     <div>
         <v-container
-            style="height: 100vh" 
             class="pb-12" 
             :class="$vuetify.display.mdAndUp ? 'ma-4' : ''" 
             fluid

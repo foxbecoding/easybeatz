@@ -8,6 +8,9 @@
             transition="slide-x-transition"
         >
             <v-container class="px-0 my-4">
+                <div v-if="$vuetify.display.xs" class="content-img-container mx-auto">
+                    <v-img :src="data.imageSrc" cover  class="rounded-xl w-100"/>
+                </div>
                 <div class="py-4">
                     <h1>
                         <span class="title-highlight">{{ data.title }}</span>
@@ -16,7 +19,7 @@
                         {{ data.text }}
                     </p>
                 </div>
-                <div class="content-img-container mx-auto">
+                <div v-if="$vuetify.display.smAndUp" class="content-img-container mx-auto">
                     <v-img :src="data.imageSrc" cover  class="rounded-xl w-100"/>
                 </div>
             </v-container>

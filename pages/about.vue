@@ -1,7 +1,7 @@
 <template>
     <div>  
         <v-container fluid>
-            <video class="video d-block mx-auto" controls>
+            <video class="video d-block mx-auto" poster="/media/content/about-vid-poster.png" controls>
                 <source 
                     :src="`${baseUrl}/media/videos/${videoPathName}`" 
                     type="video/mp4"
