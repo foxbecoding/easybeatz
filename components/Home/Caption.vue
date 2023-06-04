@@ -6,14 +6,11 @@
                 <EasyLoader class="easy-wave"/>
             </div>
             <div class="my-4 mx-6">
-                <h1 class="title-section text-h5 my-2">Find the beat you need</h1>
+                <h1 class="title-section my-2">Find the beat you need</h1>
                 <SearchBarDesktop class="mx-auto" />
             </div>
             <div class="my-4 mx-auto" style="max-width: 600px">
-                <h1 
-                    class="title-section" 
-                    :class="$vuetify.display.mdAndUp ? 'text-h3' : 'text-h4'"
-                >
+                <h1 class="title-section">
                     <span class="title-highlight">{{ title }}</span>    
                 </h1>
                 <p class="text-section my-2">
@@ -74,8 +71,13 @@ const textSection = ref<string>(`Sign up and enhance your creativity`)
     z-index: 1 !important;
     position: relative;
 }
+@media screen and (max-width: 599px) {
+  .title-section{
+    font-size: 1.55rem;
+  }
+}
 .text-section {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     line-height: 1.8rem;
     z-index: 1 !important;
     position: relative;

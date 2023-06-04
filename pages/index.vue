@@ -1,11 +1,11 @@
 <template>
     <div>
         <v-container
-            style="position: relative; height: calc(100vh - 64px)"
+            class="home_caption_container"
             :class="$vuetify.display.mdAndUp ? 'ma-4' : ''" 
             fluid
         >
-            <HomeCaption style="width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)" />
+            <HomeCaption class="px-4 home_caption_content" />
         </v-container>
         <v-container fluid>
             <AboutContent />
@@ -168,7 +168,17 @@ onBeforeMount(() => {
 useHead(seo)
 </script>
 <style scoped> 
-
+.home_caption_container {
+    position: relative; 
+    height: calc(100vh - 128px);
+}
+.home_caption_content {
+    width: 100%; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
 .card-content-sm{
     width: 260px;
     margin-top: 4px;
