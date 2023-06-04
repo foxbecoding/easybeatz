@@ -1,10 +1,18 @@
 <template>
     <div>
-        <v-container class="pb-12" :class="$vuetify.display.mdAndUp ? 'ma-4' : ''" fluid>
+        <v-container
+            style="height: 100vh" 
+            class="pb-12" 
+            :class="$vuetify.display.mdAndUp ? 'ma-4' : ''" 
+            fluid
+        >
             <HomeCaption />
         </v-container>
-
+        <v-container fluid>
+            <AboutContent />
+        </v-container>
         <v-container 
+            v-if="false"
             class="py-12" 
             :class="$vuetify.display.mdAndUp ? 'px-7' : ' px-0'" 
             fluid
