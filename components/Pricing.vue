@@ -8,7 +8,7 @@
                 md="3"
                 lg="3"
             >
-                <v-card  rounded="xl">
+                <v-card rounded="xl" flat>
                     <v-card-title :class="`text-${p_package.package_color}`">
                         {{ p_package.package_title.toUpperCase() }}
                     </v-card-title>
