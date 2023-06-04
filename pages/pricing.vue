@@ -16,7 +16,7 @@ definePageMeta({
 });
 
 const seoData = reactive({
-    title: 'Price',
+    title: 'Pricing',
     description: 'We offer four affordable pricing plans that will cater to your needs.'
 })
 
