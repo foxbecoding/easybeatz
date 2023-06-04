@@ -1,5 +1,5 @@
 <template>
-    <v-card class="searchbar-container" rounded="xl"  elevation="8">
+    <v-card class="searchbar-container" rounded="xl" flat>
         <v-text-field
             @click:append-inner="submit()"
             @keypress.enter="submit()"
