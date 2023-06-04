@@ -1,5 +1,6 @@
 import { Beat } from '@/utils/types/Beats'
 import ApiData from '@/utils/types/ApiData'
+import { useGtm } from '@gtm-support/vue-gtm'
 
 export const useMusicPlayer = defineStore("music-player", () => {
     //state
@@ -53,6 +54,15 @@ export const useMusicPlayer = defineStore("music-player", () => {
             path: `${config.public.API_BEAT_PLAYS}`
         }
         useApiPlus(data)
+        useGtm()?.trackEvent({
+            event: 'beat_tracking',
+            category: '',
+            action: 'click',
+            label: 'Beat Tracking',
+            value: `tracking beat - ${beatData.beat_title}`,
+            noninteraction: false,
+        })
+        
     }
 
     const audioEndedEvents = (): void => {
