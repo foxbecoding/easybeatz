@@ -56,11 +56,10 @@ export const useMusicPlayer = defineStore("music-player", () => {
         useApiPlus(data)
         useGtm()?.trackEvent({
             event: 'beat_tracking',
-            category: '',
+            category: 'Beat tracking',
             action: 'click',
-            label: 'Beat Tracking',
-            value: `tracking beat - ${beatData.beat_title}`,
-            noninteraction: false,
+            label: `tracking - ${beatData.beat_title}`,
+            value: Number(beatData.pk)
         })
         
     }
