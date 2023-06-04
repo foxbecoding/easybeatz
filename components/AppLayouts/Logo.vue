@@ -4,7 +4,7 @@
         class="logo-img" 
         @click="$router.push('/')"  
         src="/logo.png" 
-        :width="!$vuetify.display.xs ? 120 : 90"
+        :width="!$vuetify.display.xs ? 134 : 90"
     />
     </v-toolbar-title>
 </template>
